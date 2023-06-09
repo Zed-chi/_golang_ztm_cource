@@ -1,0 +1,8 @@
+build - builds
+build -race  - cpnc problems
+run - runs
+mod - manages modules % deps
+mod tidy
+test
+fmt
+

@@ -1,0 +1,28 @@
+[VARS]
+var a = 3
+var a int = 3
+a := 3
+
+var (
+    a = 3 
+    b = "qwe"
+)
+var a, b = 3, "qwe"
+
+const max = 100
+
+
+[FUNC]
+func name(par1 type, par2 type) returnType {}
+func name() (type, type, type) {}
+a,b,c := name()
+
+[ARRs]
+var arr [...]int
+var dArr := make([]int)
+
+[pointer]
+var a *int
+
+b = 10
+a := &b
