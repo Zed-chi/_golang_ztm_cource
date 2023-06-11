@@ -1,27 +1,33 @@
 package apptype
 
 import (
-	"image/color"
-
 	"fyne.io/fyne/v2"
+	"image/color"
 )
+
+import "fyne.io/fyne/v2/driver/desktop"
 
 type BrushType = int
 
 type PxCanvasConfig struct {
-	draving_area     fyne.Size
-	canvas_offset    fyne.Position
-	px_rows, px_cols int
-	px_size          int
+	DrawingArea    fyne.Size
+	CanvasOffset   fyne.Position
+	PxRows, PxCols int
+	PxSize         int
 }
 
 type State struct {
-	brush_color     color.Color
-	brush_type      int
-	swatch_selected int
-	file_path       string
+	BrushColor     color.Color
+	BrushType      int
+	SwatchSelected int
+	FilePath       string
 }
 
-func (state *State) set_file_path(path string) {
-	state.file_path = path
+func (state *State) SetFilePath(path string) {
+	state.FilePath = path
+}
+
+type Brushable interface {
+	SetColor(c color.Color, x, y int)
+	MouseToCanvas(ev *desktop.MouseEvent) (*int, *int)
 }
